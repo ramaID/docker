@@ -33,9 +33,9 @@ RUN cd /opt/oracle \
     && ./configure --with-oci8=instantclient,/opt/oracle/instantclient_21_9 --with-php-config=/usr/bin/php-config8.1 \
     && make \
     && touch /etc/php/8.1/cli/conf.d/10-oci8.ini \
-    && sh -c "echo 'extension=oci8.so' > /etc/php/8.1/cli/conf.d/10-oci8.ini" \
+    && sh -c "echo 'extension=/opt/oracle/oci8-3.2.1/modules/oci8.so' > /etc/php/8.1/cli/conf.d/10-oci8.ini" \
     && touch /etc/php/8.1/fpm/conf.d/10-oci8.ini \
-    && sh -c "echo 'extension=oci8.so' > /etc/php/8.1/fpm/conf.d/10-oci8.ini"
+    && sh -c "echo 'extension=/opt/oracle/oci8-3.2.1/modules/oci8.so' > /etc/php/8.1/fpm/conf.d/10-oci8.ini"
 
 # Cleanup
 RUN apt-get clean \
