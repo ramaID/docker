@@ -10,7 +10,7 @@ COPY 10-oci8.ini /etc/php/8.1/fpm/conf.d/10-oci8.ini
 
 # Cleanup
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends git libaio1 \
+    && apt-get install -y --no-install-recommends libaio1 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
 
